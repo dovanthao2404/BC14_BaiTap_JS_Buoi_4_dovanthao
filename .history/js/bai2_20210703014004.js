@@ -30,3 +30,10 @@ function returnNotification(notification) {
   var result = document.getElementById("result");
   result.innerHTML = notification;
 }
+
+setTimeout(function () {
+  document.getElementById("audioIntro").innerHTML = `
+  <audio class="d-none" controls autoplay src="">
+  <iframe src="../audio/moichon.mp3" class="d-none" allow="autoplay" style="display:none" id="iframeAudio">
+</iframe> `
+}, 1000)
