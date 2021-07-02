@@ -1,0 +1,48 @@
+function handlerTriangle() {
+  var edge1 = document.getElementById('edge-1').value;
+  var edge2 = document.getElementById('edge-2').value;
+  var edge3 = document.getElementById('edge-3').value;
+
+  var isHaveInput = checkLength(edge1);
+  var isHaveInput1 = checkLength(edge2);
+  var isHaveInput2 = checkLength(edge3);
+
+  if (isHaveInput && isHaveInput1 && isHaveInput2) {
+
+    var a = +edge1;
+    var b = +edge2;
+    var c = +edge3;
+
+    if (!isNaN(a) && !isNaN(b) && !isNaN(c)) {
+
+      if (a > 0 || b > 0 || c > 0) {
+        notificationFail('Vui lòng nhập số lớn hơn 0.');
+      } else {
+
+      }
+    } else {
+      notificationFail("Vui lòng nhập đúng giá trị.");
+    }
+  }
+}
+
+document.getElementById('btnResult').addEventListener('click', function () {
+  var even = handlerCountEvenAndOdd();
+  if (even !== undefined) {
+    var result = document.getElementById('result');
+    result.innerHTML = `Có ${even} số chẵn và ${3 - even} số lẻ`;
+  }
+})
+
+function notificationFail(notification) {
+  var result = document.getElementById('result');
+  result.innerHTML = notification;
+}
+
+function checkLength(a) {
+  if (a === '') {
+    notificationFail("Vui lòng nhập giá trị.");
+    return false;
+  }
+  return true;
+}
