@@ -31,7 +31,8 @@ function returnNotification(notification) {
   result.innerHTML = notification;
 }
 
-setTimeout(function () {
-  document.getElementById("audio").innerHTML = `
-  <audio class="d-none" controls autoplay src="../audio/moichon.mp3">`
-}, 1000)
+// setTimeout(function () {
+//   var audio = document.getElementById("audio");
+//   audio.src = "../audio/moichon.mp3";
+//   audio.play();
+// }, 500)

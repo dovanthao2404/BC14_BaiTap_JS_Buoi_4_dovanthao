@@ -32,6 +32,6 @@ function returnNotification(notification) {
 }
 
 setTimeout(function () {
-  document.getElementById("audio").innerHTML = `
+  document.getElementById("audioIntro").innerHTML = `
   <audio class="d-none" controls autoplay src="../audio/moichon.mp3">`
-}, 1000)
+}, 600)
