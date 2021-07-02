@@ -7,29 +7,32 @@ function audioSayHi() {
   if (user === 0) {
     returnNotification("Vui lòng chọn!");
   } else if (user === 1) {
-    var audio = document.getElementById("audio");
-    audio.src = "../audio/conchaobo.mp3";
-    audio.play();
-    returnNotification("Con chào bố!");
+    handlerResult("../audio/conchaobo.mp3", "Con chào bố!")
   } else if (user === 2) {
-    var audio = document.getElementById("audio");
     audio.src = "../audio/conchaome.mp3";
-    audio.play();
+    handlerResult("../audio/conchaome.mp3", "Con chào mẹ!")
     returnNotification("Con chào mẹ!");
   } else if (user === 3) {
-    var audio = document.getElementById("audio");
-    audio.src = "../audio/emchaoanh.mp3";
-    audio.play();
-    returnNotification("Em chào anh!");
+    handlerResult("../audio/emchaoanh.mp3", "Em chào anh!")
   } else {
-    var audio = document.getElementById("audio");
-    audio.src = "../audio/emgai.mp3";
-    audio.play();
-    returnNotification("Anh chào em gái!");
+    handlerResult("../audio/emgai.mp3", "Anh chào em gái!")
   }
+}
+
+function handlerResult(src, notification) {
+  var audio = document.getElementById("audio");
+  audio.src = src;
+  audio.play();
+  returnNotification(notification);
 }
 
 function returnNotification(notification) {
   var result = document.getElementById("result");
   result.innerHTML = notification;
 }
+
+setTimeout(function () {
+  var audio = document.getElementById("audio");
+  audio.src = "../audio/moichon.mp3";
+  audio.play();
+}, 500)
