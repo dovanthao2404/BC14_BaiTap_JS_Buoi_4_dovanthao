@@ -1,40 +1,39 @@
-// Mảng chứa các thông báo
+
 var greeting = ["Vui lòng chọn!",
-  "Con chào bố",
+  {
+    greeting: "Con chào bố",
+    src: ""../ audio / conchaobo.mp3""},
   "Con chào mẹ",
   "Em chào anh!",
   "Anh chào em gái!"
 ]
 
 document.getElementById("user").addEventListener("change", function () {
-  audioAndGreeting();
+  audioSayHi();
 })
 
-// Âm thanh và lời chào
-function audioAndGreeting() {
+function audioSayHi() {
   var user = document.getElementById("user").selectedIndex;
   if (user === 0) {
-    returnNotification(0);
+    returnNotification("Vui lòng chọn!");
   } else if (user === 1) {
-    handlerResult("../audio/conchaobo.mp3", 1)
+    handlerResult("../audio/conchaobo.mp3", "Con chào bố!")
   } else if (user === 2) {
-    handlerResult("../audio/conchaome.mp3", 2)
+    handlerResult("../audio/conchaome.mp3", "Con chào mẹ!")
   } else if (user === 3) {
-    handlerResult("../audio/emchaoanh.mp3", 3)
+    handlerResult("../audio/emchaoanh.mp3", "Em chào anh!")
   } else {
-    handlerResult("../audio/emgai.mp3", 4)
+    handlerResult("../audio/emgai.mp3", "Anh chào em gái!")
   }
 }
 
-// Xuất lời chào và âm thanh
-function handlerResult(src, indexGreeting) {
+function handlerResult(src, notification) {
   var audio = document.getElementById("audio");
   audio.src = src;
   audio.play();
-  returnNotification(indexGreeting);
+  returnNotification(notification);
 }
 
-// xuất thông báo
 function returnNotification(indexGreeting) {
   var result = document.getElementById("result");
   result.innerHTML = greeting[indexGreeting];

@@ -57,7 +57,7 @@ function checkTriangleType(a, b, c) {
   return 'Tam giác nhọn';
 }
 
-
+//
 document.getElementById('btnResult').addEventListener('click', function () {
   var triangleType = handlerValueTriangle();
   if (triangleType) {
@@ -72,7 +72,6 @@ function notificationFail(notification) {
   result.innerHTML = notification;
 }
 
-// Kiểm tra độ dài
 function checkLength(a) {
   if (a === '') {
     notificationFail("Vui lòng nhập giá trị.");

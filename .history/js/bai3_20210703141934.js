@@ -1,5 +1,3 @@
-const ALL_NUMBER = 3;
-
 function handlerCountEvenAndOdd() {
   var number1 = document.getElementById('number-1').value;
   var number2 = document.getElementById('number-2').value;
@@ -29,7 +27,7 @@ function handlerCountEvenAndOdd() {
   }
 }
 
-// Điếm số chẵn
+// Điểm số chẵn
 function countEven(a, b, c) {
   var count = 0;
   if (a % 2 === 0) {
@@ -49,7 +47,7 @@ document.getElementById('btnResult').addEventListener('click', function () {
   var even = handlerCountEvenAndOdd();
   if (even !== undefined) {
     var result = document.getElementById('result');
-    result.innerHTML = `Có ${even} số chẵn và ${ALL_NUMBER - even} số lẻ`;
+    result.innerHTML = `Có ${even} số chẵn và ${3 - even} số lẻ`;
   }
 })
 

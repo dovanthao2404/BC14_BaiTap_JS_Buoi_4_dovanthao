@@ -7,10 +7,9 @@ var greeting = ["Vui lòng chọn!",
 ]
 
 document.getElementById("user").addEventListener("change", function () {
-  audioAndGreeting();
+  audioSayHi();
 })
 
-// Âm thanh và lời chào
 function audioAndGreeting() {
   var user = document.getElementById("user").selectedIndex;
   if (user === 0) {

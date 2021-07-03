@@ -1,4 +1,4 @@
-// Mảng chứa các thông báo
+
 var greeting = ["Vui lòng chọn!",
   "Con chào bố",
   "Con chào mẹ",
@@ -7,11 +7,10 @@ var greeting = ["Vui lòng chọn!",
 ]
 
 document.getElementById("user").addEventListener("change", function () {
-  audioAndGreeting();
+  audioSayHi();
 })
 
-// Âm thanh và lời chào
-function audioAndGreeting() {
+function audioSayHi() {
   var user = document.getElementById("user").selectedIndex;
   if (user === 0) {
     returnNotification(0);
@@ -26,15 +25,13 @@ function audioAndGreeting() {
   }
 }
 
-// Xuất lời chào và âm thanh
-function handlerResult(src, indexGreeting) {
+function handlerResult(src, notification) {
   var audio = document.getElementById("audio");
   audio.src = src;
   audio.play();
-  returnNotification(indexGreeting);
+  returnNotification(notification);
 }
 
-// xuất thông báo
 function returnNotification(indexGreeting) {
   var result = document.getElementById("result");
   result.innerHTML = greeting[indexGreeting];

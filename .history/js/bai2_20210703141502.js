@@ -7,11 +7,10 @@ var greeting = ["Vui lòng chọn!",
 ]
 
 document.getElementById("user").addEventListener("change", function () {
-  audioAndGreeting();
+  audioSayHi();
 })
 
-// Âm thanh và lời chào
-function audioAndGreeting() {
+function audioSayHi() {
   var user = document.getElementById("user").selectedIndex;
   if (user === 0) {
     returnNotification(0);
@@ -26,7 +25,6 @@ function audioAndGreeting() {
   }
 }
 
-// Xuất lời chào và âm thanh
 function handlerResult(src, indexGreeting) {
   var audio = document.getElementById("audio");
   audio.src = src;
@@ -34,7 +32,6 @@ function handlerResult(src, indexGreeting) {
   returnNotification(indexGreeting);
 }
 
-// xuất thông báo
 function returnNotification(indexGreeting) {
   var result = document.getElementById("result");
   result.innerHTML = greeting[indexGreeting];

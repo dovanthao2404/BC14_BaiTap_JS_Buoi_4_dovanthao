@@ -1,5 +1,3 @@
-const ALL_NUMBER = 3;
-
 function handlerCountEvenAndOdd() {
   var number1 = document.getElementById('number-1').value;
   var number2 = document.getElementById('number-2').value;

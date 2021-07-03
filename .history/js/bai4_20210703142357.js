@@ -15,12 +15,11 @@ function handlerValueTriangle() {
     var c = +edge3;
     // Kiểm tra người dùng nhập có phải là số không
     if (!isNaN(a) && !isNaN(b) && !isNaN(c)) {
-
-      // kiểm tra người dùng nhập vào có phải là số lớn hơn 0 không
+      
       if (a <= 0 || b <= 0 || c <= 0) {
         notificationFail('Vui lòng nhập số lớn hơn 0.');
       } else {
-        // Kiểm tra tam giác có tồn tại không.
+
         if ((a + b <= c) || (a + c <= b) || (b + c <= a)) {
           notificationFail('Không tồn tại tam giác có các cạnh như vậy.')
         } else {
@@ -57,7 +56,6 @@ function checkTriangleType(a, b, c) {
   return 'Tam giác nhọn';
 }
 
-
 document.getElementById('btnResult').addEventListener('click', function () {
   var triangleType = handlerValueTriangle();
   if (triangleType) {
@@ -66,13 +64,11 @@ document.getElementById('btnResult').addEventListener('click', function () {
   }
 })
 
-// Xuất thông báo
 function notificationFail(notification) {
   var result = document.getElementById('result');
   result.innerHTML = notification;
 }
 
-// Kiểm tra độ dài
 function checkLength(a) {
   if (a === '') {
     notificationFail("Vui lòng nhập giá trị.");

@@ -57,7 +57,7 @@ function checkTriangleType(a, b, c) {
   return 'Tam giác nhọn';
 }
 
-
+//
 document.getElementById('btnResult').addEventListener('click', function () {
   var triangleType = handlerValueTriangle();
   if (triangleType) {

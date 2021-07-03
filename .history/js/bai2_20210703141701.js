@@ -10,7 +10,6 @@ document.getElementById("user").addEventListener("change", function () {
   audioAndGreeting();
 })
 
-// Âm thanh và lời chào
 function audioAndGreeting() {
   var user = document.getElementById("user").selectedIndex;
   if (user === 0) {
